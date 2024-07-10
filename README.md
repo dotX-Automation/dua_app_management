@@ -38,7 +38,7 @@ This also adds support for initialization of custom ROS 2 contexts, uses `sigact
 
 This module is made of a single header only: `signal_handler.hpp`, so to access its functions you just need to include that.
 
-All operations are performed by a `ROS2SignalHandler::SignalHandler` object; to use it, interface it with the following public methods:
+All operations are performed by a `dua_app_management::SignalHandler` object; to use it, interface it with the following public methods:
 
 - `SignalHandler::init` to initialize it;
 - `SignalHandler::install` to install a new signal handler for a given signal;
