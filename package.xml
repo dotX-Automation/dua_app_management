@@ -4,7 +4,7 @@
   <name>dua_app_management</name>
   <version>1.0.0</version>
   <description>DUA applications management utilities.</description>
-  <maintainer email="info@dotxautomation.com">dotX Automation</maintainer>
+  <maintainer email="info@dotxautomation.com">dotX Automation s.r.l.</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
