@@ -48,6 +48,12 @@ template<class ExecutorT, class NodeT>
 class ROS2AppManager final
 {
 public:
+  using SharedPtr = std::shared_ptr<ROS2AppManager<ExecutorT, NodeT>>;
+  using WeakPtr = std::weak_ptr<ROS2AppManager<ExecutorT, NodeT>>;
+  using UniquePtr = std::unique_ptr<ROS2AppManager<ExecutorT, NodeT>>;
+  using ConstSharedPtr = std::shared_ptr<const ROS2AppManager<ExecutorT, NodeT>>;
+  using ConstWeakPtr = std::weak_ptr<const ROS2AppManager<ExecutorT, NodeT>>;
+
   /**
    * @brief Constructor: initializes the ROS 2 app.
    *
@@ -190,6 +196,12 @@ template<class ExecutorT>
 class ROS2AppManager final
 {
 public:
+  using SharedPtr = std::shared_ptr<ROS2AppManager<ExecutorT>>;
+  using WeakPtr = std::weak_ptr<ROS2AppManager<ExecutorT>>;
+  using UniquePtr = std::unique_ptr<ROS2AppManager<ExecutorT>>;
+  using ConstSharedPtr = std::shared_ptr<const ROS2AppManager<ExecutorT>>;
+  using ConstWeakPtr = std::weak_ptr<const ROS2AppManager<ExecutorT>>;
+
   /**
    * @brief Constructor: initializes the ROS 2 component container app.
    *

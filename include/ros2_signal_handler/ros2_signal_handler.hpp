@@ -25,6 +25,7 @@
 #ifndef DUA_APP_MANAGEMENT__ROS2_SIGNAL_HANDLER_HPP_
 #define DUA_APP_MANAGEMENT__ROS2_SIGNAL_HANDLER_HPP_
 
+#include <memory>
 #include <thread>
 #include <mutex>
 #include <atomic>
@@ -45,6 +46,12 @@ namespace dua_app_management
 class SignalHandler final
 {
 public:
+  using SharedPtr = std::shared_ptr<SignalHandler>;
+  using WeakPtr = std::weak_ptr<SignalHandler>;
+  using UniquePtr = std::unique_ptr<SignalHandler>;
+  using ConstSharedPtr = std::shared_ptr<const SignalHandler>;
+  using ConstWeakPtr = std::weak_ptr<const SignalHandler>;
+
   /**
    * @brief Returns the global singleton instance.
    *
@@ -90,7 +97,7 @@ public:
     // Initialize semaphores
     if (sem_init(&sig_prod_, 0, 0) || sem_init(&sig_cons_, 0, 1)) {
       std::perror("sem_init");
-      throw std::runtime_error("SignalHandler::init: failed to initialize sempahores");
+      throw std::runtime_error("SignalHandler::init: failed to initialize semaphores");
     }
 
     // Initialize pointers
