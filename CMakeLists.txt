@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.10)
 project(dua_app_management)
 
 set(CMAKE_BUILD_TYPE "RelWithDebInfo")
@@ -27,7 +27,7 @@ add_executable(dua_component_container_mt
   src/component_container_mt.cpp)
 target_include_directories(dua_component_container_mt PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
+  $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
 ament_target_dependencies(dua_component_container_mt
   rclcpp
   rclcpp_components)
